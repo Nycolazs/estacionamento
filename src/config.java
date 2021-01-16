@@ -68,7 +68,7 @@ public class config extends principal {
                     case 4: main.valorDiariaM = tools.doubleToString(linha); break;
                     case 5: main.valorDiariaCP = tools.doubleToString(linha); break;
                     case 6: main.valorDiariaCG = tools.doubleToString(linha); break;
-                    case 7: main.valorTol = tools.intToString(linha); break;
+                    case 7: main.valorTol = tools.stringToInt(linha); break;
                 }
                 
             }
