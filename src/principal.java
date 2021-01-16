@@ -4,8 +4,9 @@ public class principal{
 	protected static Scanner ler = new Scanner(System.in);
 	public static config config = new config();
 	public static ferramentas tools = new ferramentas();
-	public static String data = tools.passaData();
+	public static String data = ferramentas.passaData();
 	public static entrada entrada = new entrada();
+	protected static int cont = 0;
 	protected static int valorTol; protected String nome;
 	protected static double valorMoto; protected static double valorCarroP;
 	protected static double valorCarroG; protected static double valorDiariaCG;
@@ -17,13 +18,14 @@ public class principal{
 	public static void main(String[]a){
 		config.primeiraVez();
 		while(true){
-			System.out.println("ESTACIONAMENTO\n1-Entrada\n2-Saida\n3-Configurar valores do zero");
+			System.out.println("ESTACIONAMENTO\n1-Entrada\n2-Saida\n3-Configurar valores do zero\n5-Exibe patio");
 			repete:while(true){
 				String opt = ler.next();
 				switch(opt){
 					case "1": entrada.menu(); break repete;
 					case "2": break repete;
 					case "3": config.config(); break repete;
+					case "5": tools.exibePatio();break repete;
 					default:System.out.println("Opção inválida");break;
 				}
 			}

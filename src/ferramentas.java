@@ -42,8 +42,37 @@ public class ferramentas extends principal{
         return valor;
     }
 
-    public static int intToString(String a){
+    public static int stringToInt(String a){
         int valor = Integer.parseInt(a);
         return valor;
+    }
+
+    public static String intToString(int a){
+        String result = Integer.toString(a);
+        return result;
+    }
+
+    public static String verificaPlaca(){
+        String placa = ler.next();
+        String result;
+        repete: while(true){
+            if(placa.length()>7){
+                System.out.println("PLACA INVÁLIDA, DIGITE NOVAMENTE");
+                placa = ler.next();
+            }else{
+                result = placa;
+                break repete;
+            }
+        }
+        return result;
+    }
+
+    public static void exibePatio(){
+        for(int i=0;i<50;i++){
+            for(int b=0;b<5;b++){
+                System.out.print(patio[i][b]+" ");
+            }
+            System.out.println("\n");
+        }
     }
 }
