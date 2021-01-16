@@ -45,6 +45,5 @@ public class entrada extends principal{
         patio[num][1] = placa;
         patio[num][2] = tabela;
         patio[num][0] = entrada;
-        
     }
 }

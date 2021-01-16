@@ -7,7 +7,7 @@ import java.time.format.DateTimeFormatter;
 
 public class ferramentas extends principal{
     private static LocalDateTime agora = LocalDateTime.now(); // data/hora atual
-	
+
     public static String passaData(){
         // formatar a data
         DateTimeFormatter formatterData = DateTimeFormatter.ofPattern("dd/MM/uuuu");

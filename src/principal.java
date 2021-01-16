@@ -14,6 +14,7 @@ public class principal{
 	protected static String[][] patio = new String[50][5];//Numero,Placa,Tabela,Entradas,Saidas
 	//Tabela 1-Moto, 2-Carro pequeno, 3-Carro grande, 4-Diária Moto, 5-Diária Carro
 	
+	
 	//Main com menu principal
 	public static void main(String[]a){
 		config.primeiraVez();

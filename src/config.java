@@ -70,7 +70,6 @@ public class config extends principal {
                     case 6: main.valorDiariaCG = tools.doubleToString(linha); break;
                     case 7: main.valorTol = tools.stringToInt(linha); break;
                 }
-                
             }
         }catch(IOException e){
             e.printStackTrace();
