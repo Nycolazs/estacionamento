@@ -1,6 +1,6 @@
 public class entrada extends principal{
     public static void menu(){
-        System.out.println("Digite a tabela do veículo\n1-Moto\n2-Carro\n3-Diária");
+        System.out.println("Digite a tabela do veículo\n1-Moto\n2-Carro\n3-Diaria");
         String opt = ler.next();
         switch(opt){
             case "1":moto();break;
@@ -25,25 +25,70 @@ public class entrada extends principal{
 
     public static void moto(){
         System.out.println("Digite a placa da moto");
-        String placa = ferramentas.verificaPlaca();
-        String hora = ferramentas.passaHora();
+		String placa = ferramentas.verificaPlaca();
+        repete:while(true){
+			if(placa==null){
+				System.out.println("Tente novamente");
+				placa=ferramentas.verificaPlaca();
+			}else{
+				break repete;
+			}
+		}
         String tabela = "moto";
-        cont++;
-        insereVetor(cont, placa, tabela, hora);
+        insereVetor(cont, placa, tabela);
     }
 
     public static void carro(String opt){
-
+		System.out.println("Digite a placa do carro");
+        String placa = ferramentas.verificaPlaca();
+        repete:while(true){
+			if(placa==null){
+				System.out.println("Tente novamente");
+				placa=ferramentas.verificaPlaca();
+			}else{
+				break repete;
+			}
+		}
+		String tabela = null;
+		if(opt.equals("1")){
+			tabela = "Carro Pequeno";
+		}else{
+			tabela = "Carro Grande";
+		}
+        insereVetor(cont, placa, tabela);
     }
 
     public static void diaria(String opt){
-        
+		String tabela = null;
+		String besta = null;
+        if(opt.equals("1")){
+			tabela = "Diaria Moto";
+			besta = "a moto";
+		}else if(opt.equals("2")){
+			tabela = "D Carro Pequeno";
+			besta = "o carro";
+		}else{
+			tabela = "D Carro Grande";
+			besta = "o carro";
+		}
+		System.out.println("Digite a placa d"+besta);
+		String placa = ferramentas.verificaPlaca();
+        repete:while(true){
+			if(placa==null){
+				System.out.println("Tente novamente");
+				placa=ferramentas.verificaPlaca();
+			}else{
+				break repete;
+			}
+		}
+        insereVetor(cont, placa, tabela);
     }
 
-    public static void insereVetor(int num, String placa, String tabela, String entrada){
-        patio[num][0] = ferramentas.intToString(num);
+    public static void insereVetor(int num, String placa, String tabela){
+        patio[num][0] = tools.intToString(num+1);
         patio[num][1] = placa;
         patio[num][2] = tabela;
-        patio[num][0] = entrada;
+        patio[num][3] = ferramentas.passaHora();
+		cont++;
     }
 }

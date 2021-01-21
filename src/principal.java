@@ -19,7 +19,7 @@ public class principal{
 	public static void main(String[]a){
 		config.primeiraVez();
 		while(true){
-			System.out.println("ESTACIONAMENTO\n1-Entrada\n2-Saida\n3-Configurar valores do zero\n5-Exibe patio");
+			System.out.println("ESTACIONAMENTO\n1-Entrada\n2-Saida\n3-Configurar valores do zero\n5-Exibe patio\n6-Sair");
 			repete:while(true){
 				String opt = ler.next();
 				switch(opt){
@@ -27,7 +27,8 @@ public class principal{
 					case "2": break repete;
 					case "3": config.config(); break repete;
 					case "5": tools.exibePatio();break repete;
-					default:System.out.println("Opção inválida");break;
+					case "6": System.out.println("Encerrando o programa");System.exit(0);
+					default:System.out.println("Opcao invalida");break;
 				}
 			}
 		}

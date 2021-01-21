@@ -35,21 +35,21 @@ public class config extends principal {
 	
 	//Insere as configurações no arquivo config.txt pela primeira vez
 	public static void insereConfig(){
-		System.out.println("CONFIGURAÇÃO DE HORAS!\nDigite o valor da hora para MOTO");
+		System.out.println("CONFIGURAÇAO DE HORAS!\nDigite o valor da hora para MOTO");
 		tools.escreverTexto("config.txt",configuraValor()+"\n");
 		System.out.println("Digite o valor da hora para CARRO PEQUENO");
 		tools.escreverTexto("config.txt",configuraValor()+"\n");
 		System.out.println("Digite o valor da hora para CARRO GRANDE");
 		tools.escreverTexto("config.txt",configuraValor()+"\n");
 
-		System.out.println("CONFIGURAÇÃO DA DIÁRIA!\nDigite o valor da diária para MOTO");
+		System.out.println("CONFIGURAÇAO DA DIARIA!\nDigite o valor da diária para MOTO");
 		tools.escreverTexto("config.txt",configuraValor()+"\n");
-		System.out.println("Digite o valor da diária para CARRO PEQUENO");
+		System.out.println("Digite o valor da diaria para CARRO PEQUENO");
 		tools.escreverTexto("config.txt",configuraValor()+"\n");
-		System.out.println("Digite o valor da diária para CARRO GRANDE");
+		System.out.println("Digite o valor da diaria para CARRO GRANDE");
 		tools.escreverTexto("config.txt",configuraValor()+"\n");
 
-		System.out.println("DIGITE A QUANTIDADE DE MINUTOS DE TOLERÂNCIA!\n");
+		System.out.println("DIGITE A QUANTIDADE DE MINUTOS DE TOLERANCIA!\n");
 		int tol = ler.nextInt();
 		tools.escreverTexto("config.txt",tol+"\n");
 	}
@@ -74,7 +74,7 @@ public class config extends principal {
         }catch(IOException e){
             e.printStackTrace();
         }catch(NullPointerException e){
-			System.out.println("Houve algum erro no seu arquivo de configuração, vamos iniciar do zero");
+			System.out.println("Houve algum erro no seu arquivo de configuraçao, vamos iniciar do zero");
 			File f = new File("config.txt");
 			f.delete();
 			primeiraVez();

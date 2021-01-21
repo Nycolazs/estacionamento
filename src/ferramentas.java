@@ -6,9 +6,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ferramentas extends principal{
-    private static LocalDateTime agora = LocalDateTime.now(); // data/hora atual
 
     public static String passaData(){
+		LocalDateTime agora = LocalDateTime.now(); // data e hora atual
         // formatar a data
         DateTimeFormatter formatterData = DateTimeFormatter.ofPattern("dd/MM/uuuu");
         String dataFormatada = formatterData.format(agora);
@@ -16,6 +16,7 @@ public class ferramentas extends principal{
     }
 	
 	public static String passaHora(){
+		LocalDateTime agora = LocalDateTime.now(); // data e hora atual
 		// formatar a hora
         DateTimeFormatter formatterHora = DateTimeFormatter.ofPattern("HH:mm:ss");
         String horaFormatada = formatterHora.format(agora);
@@ -56,19 +57,34 @@ public class ferramentas extends principal{
         String placa = ler.next();
         String result;
         repete: while(true){
-            if(placa.length()>7){
-                System.out.println("PLACA INVÁLIDA, DIGITE NOVAMENTE");
+            if(placa.length()!=7){
+                System.out.println("Placa invalida, tente novamente");
                 placa = ler.next();
-            }else{
-                result = placa;
-                break repete;
+			}else{
+                if(verificaExistPlaca(placa)){
+					System.out.println("Veiculo ja cadastrado");
+					return null;
+				}else{
+					result = placa;
+					break repete;
+				}
             }
         }
         return result;
     }
+	
+	public static boolean verificaExistPlaca(String placa){
+		for(int i=0;i<cont;i++){
+			if(placa.equals(patio[i][1])){
+				return true;
+			}
+		}
+		return false;
+	}
 
     public static void exibePatio(){
-        for(int i=0;i<50;i++){
+		System.out.println("Numero - Placa - Tabela - Entrada - Saida");
+        for(int i=0;i<cont;i++){
             for(int b=0;b<5;b++){
                 System.out.print(patio[i][b]+" ");
             }
