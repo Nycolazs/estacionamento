@@ -61,7 +61,7 @@ public class config extends principal {
             for(int i=0;i<8;i++){
 				linha = buffRead.readLine();  
                 switch(i){
-                    case 0: main.nome = linha; break;
+                    case 0s: main.nome = linha; break;
                     case 1: main.valorMoto = tools.doubleToString(linha); break;
                     case 2: main.valorCarroP = tools.doubleToString(linha); break;
                     case 3: main.valorCarroG = tools.doubleToString(linha); break;

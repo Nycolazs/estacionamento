@@ -82,6 +82,33 @@ public class ferramentas extends principal{
 		return false;
 	}
 
+	public static int procuraPlaca(String placa){
+		for(int i=0;i<cont;i++){
+			if(placa.equals(patio[i][1])){
+				return i;
+			}
+		}
+		return 0;
+	}
+	
+	public static String verificaTabela(String placa){
+		for(int i=0;i<cont;i++){
+			if(placa.equals(patio[i][1])){
+				return patio[i][2];
+			}
+		}
+		return " ";
+	}
+
+	public static int passaMin(String hora){
+		hora = hora.replaceAll(":", "");
+		String hs = ((hora.charAt(0))+""+(hora.charAt(1)));
+		String ms = ((hora.charAt(2))+""+(hora.charAt(3)));
+		int hi = stringToInt(hs) * 60;
+		int mi = stringToInt(ms);
+		return hi+mi;
+	}
+
     public static void exibePatio(){
 		System.out.println("Numero - Placa - Tabela - Entrada - Saida");
         for(int i=0;i<cont;i++){
