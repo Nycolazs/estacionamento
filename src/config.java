@@ -42,7 +42,7 @@ public class config extends principal {
 		System.out.println("Digite o valor da hora para CARRO GRANDE");
 		tools.escreverTexto("config.txt",configuraValor()+"\n");
 
-		System.out.println("CONFIGURAÇAO DA DIARIA!\nDigite o valor da diária para MOTO");
+		System.out.println("CONFIGURAÇAO DA DIARIA!\nDigite o valor da diaria para MOTO");
 		tools.escreverTexto("config.txt",configuraValor()+"\n");
 		System.out.println("Digite o valor da diaria para CARRO PEQUENO");
 		tools.escreverTexto("config.txt",configuraValor()+"\n");
@@ -61,20 +61,20 @@ public class config extends principal {
             for(int i=0;i<8;i++){
 				linha = buffRead.readLine();  
                 switch(i){
-                    case 0s: main.nome = linha; break;
-                    case 1: main.valorMoto = tools.doubleToString(linha); break;
-                    case 2: main.valorCarroP = tools.doubleToString(linha); break;
-                    case 3: main.valorCarroG = tools.doubleToString(linha); break;
-                    case 4: main.valorDiariaM = tools.doubleToString(linha); break;
-                    case 5: main.valorDiariaCP = tools.doubleToString(linha); break;
-                    case 6: main.valorDiariaCG = tools.doubleToString(linha); break;
-                    case 7: main.valorTol = tools.stringToInt(linha); break;
+                    case 0: nome = linha; break;
+                    case 1: valorMoto = tools.doubleToString(linha); break;
+                    case 2: valorCarroP = tools.doubleToString(linha); break;
+                    case 3: valorCarroG = tools.doubleToString(linha); break;
+                    case 4: valorDiariaM = tools.doubleToString(linha); break;
+                    case 5: valorDiariaCP = tools.doubleToString(linha); break;
+                    case 6: valorDiariaCG = tools.doubleToString(linha); break;
+                    case 7: valorTol = tools.stringToInt(linha); break;
                 }
             }
         }catch(IOException e){
             e.printStackTrace();
         }catch(NullPointerException e){
-			System.out.println("Houve algum erro no seu arquivo de configuraçao, vamos iniciar do zero");
+			System.out.println("Houve algum erro no seu arquivo de configuracao, vamos iniciar do zero");
 			File f = new File("config.txt");
 			f.delete();
 			primeiraVez();

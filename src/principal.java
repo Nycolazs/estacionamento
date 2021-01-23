@@ -8,7 +8,7 @@ public class principal{
 	public static entrada entrada = new entrada();
 	public static saida saida = new saida();
 	protected static int cont = 0;
-	protected static int valorTol; protected String nome;
+	protected static int valorTol; protected static String nome;
 	protected static double valorMoto; protected static double valorCarroP;
 	protected static double valorCarroG; protected static double valorDiariaCG;
 	protected static double valorDiariaM; protected static double valorDiariaCP;
@@ -21,7 +21,8 @@ public class principal{
 	public static void main(String[]a){
 		config.primeiraVez();
 		while(true){
-			System.out.println("ESTACIONAMENTO\n1-Entrada\n2-Saida\n3-Configurar valores do zero\n5-Exibe patio\n6-Sair");
+			ferramentas.exibeVetorTodo();
+			System.out.println("\nESTACIONAMENTO\n1-Entrada\n2-Saida\n3-Configurar valores do zero\n5-Exibe patio\n6-Sair");
 			repete:while(true){
 				String opt = ler.next();
 				switch(opt){
@@ -35,4 +36,9 @@ public class principal{
 			}
 		}
 	}
+	
+	//System.out.println("Nome:"+nome+"\nMoto:"+valorMoto+"\nCarro P:"+valorCarroP+"\nCarro G:"+valorCarroG);
+	//System.out.println("Valor Diaria Moto"+valorDiariaM+"\nValor Diaria Carro Pequeno"+valorDiariaCP);
+	//System.out.println("Valor Diaria Carro Grande"+valorDiariaCG+"\nValor Tolerancia:"+valorTol);
+	
 }

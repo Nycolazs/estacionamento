@@ -55,6 +55,7 @@ public class ferramentas extends principal{
 
     public static String verificaPlaca(){
         String placa = ler.next();
+		placa=placa.toUpperCase();
         String result;
         repete: while(true){
             if(placa.length()!=7){
@@ -118,4 +119,22 @@ public class ferramentas extends principal{
             System.out.println("\n");
         }
     }
+	
+	public static void reinsereVetor(){
+		for(int i=0;i<cont;i++){
+			for(int b=0;b<5;b++){
+				patio[i][b]=patio[i+1][b];
+			}
+		}
+		cont--;
+	}
+	
+	public static void exibeVetorTodo(){
+		for(int i=0;i<10;i++){
+			for(int b=0;b<5;b++){
+				System.out.print(patio[i][b]+" ");
+			}
+			System.out.println("\n");
+		}
+	}
 }

@@ -2,10 +2,11 @@ public class saida extends principal{
 	public static void menu(){
 		System.out.println("Digite a placa do veiculo");
 		String placa = ler.next();
+		placa = placa.toUpperCase();
 		if(ferramentas.verificaExistPlaca(placa)){
 			saida(placa);
 		}else{
-			System.out.println("Veiculo não encontrado");
+			System.out.println("Veiculo nao encontrado");
 		}
 	}
 	
@@ -34,5 +35,6 @@ public class saida extends principal{
 		for(int i=0;i<5;i++){
 			patio[pos][i] = null;
 		}
+		ferramentas.reinsereVetor();
 	}
 }
